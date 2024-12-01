@@ -1,22 +1,42 @@
+// @use "../utils/mixin";
+// @use "../utils/variables";
+// @use "../utils/variables" as v;
+// @use "../utils/variables" as *;
+
+// foward
+// @use "../utils/styles-forwarded.scss" as frwd;
+@use "../utils" as frwd;
+
 .badge {
-  display: inline-block;
-  min-width: 96px;
-  padding: 4px 8px;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 20px;
-  letter-spacing: 0.07px;
-  text-align: center;
-  color: #fff;
-  border-radius: 20px;
+  @include frwd.badge-base();
+  // display: inline-block;
+  // min-width: 96px;
+  // padding: 4px 8px;
+  // font-size: 14px;
+  // font-weight: 500;
+  // line-height: 20px;
+  // letter-spacing: 0.07px;
+  // text-align: center;
+  // color: #fff;
+  // color: v.$badge-cl;
+  color: frwd.$badge-cl;
+  // border-radius: 20px;
 }
 
 .badge-completed {
-  background-color: #a461d8;
+  // background-color: #a461d8;
+  // background-color: variables.$completed;
+  // background-color: v.$completed;
+  background-color: frwd.$completed;
+  // background-color: $completed;
 }
 .badge-ended {
-  background-color: #fc5a5a;
+  // background-color: #fc5a5a;
+  // background-color: v.$ended;
+  background-color: frwd.$ended;
 }
 .badge-active {
-  background-color: #82c43c;
+  // background-color: #82c43c;
+  // background-color: v.$active;
+  background-color: frwd.$active;
 }
