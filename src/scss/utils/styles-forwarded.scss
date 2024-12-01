@@ -1,9 +1,0 @@
-// @forward "mixin";
-// @forward "./variables";
-
-// @forward "./variables" hide $active; закріт доступ к active
-// @forward "./variables" show $active; закріт доступ ко всем переменнім,кроме active
-
-// если переименовать єтот файл в index.scss , то при импорте вместо
-// @use "../utils/styles-forwarded.scss" as frwd; пишем
-// @use "../utils" as frwd;
