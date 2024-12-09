@@ -1,12 +1,32 @@
-@mixin badge-base() {
-  display: inline-block;
-  min-width: 96px;
-  padding: 4px 8px;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 20px;
-  letter-spacing: 0.07px;
-  text-align: center;
+@use "sass:map";
+@use "variables" as v;
 
-  border-radius: 20px;
+$breakpoints: (
+  "sm": v.$sm,
+  "md": v.$md,
+  "lg": v.$lg,
+  "xl": v.$xl,
+  "xxl": v.$xxl,
+) !default;
+
+@mixin mq($bp: sm, $type: min, $is-retina: false) {
+  @if map.has-key($breakpoints, $bp) {
+    $width: map-get($breakpoints, $bp);
+
+    @if $type == max {
+      $width: $width - 0.02px;
+    }
+
+    @media only screen and (#{$type}-width: $width) {
+      @if $is-retina {
+        @media (min-device-pixel-ratio: 2),
+          (min-resolution: 192dpi),
+          (min-resolution: 2dppx) {
+          @content;
+        }
+      } @else {
+        @content;
+      }
+    }
+  }
 }

@@ -1,0 +1,13 @@
+@use "mixin" as m;
+
+.poster {
+  @include m.mq($bp: md, $type: max, $is-retina: true) {
+    background-image: url("../images/image_@2x.jpg");
+  }
+}
+
+.box {
+  @include m.mq($bp: xl) {
+    display: flex;
+  }
+}

@@ -1,6 +1,20 @@
-$badge-cl: #fff;
-$completed: #a461d8;
-$ended: #fc5a5a;
-$active: #82c43c;
+// @use "mixin" as m;
 
-// $-active: #82c43c; доступ к переменной закріт
+// Брейкпоінти
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+
+// .poster {
+//   @include m.mq($bp: md, $type: max, $is-retina: true) {
+//     background-image: url("../images/image_@2x.jpg");
+//   }
+// }
+
+// .box {
+//   @include m.mq($bp: xl) {
+//     display: flex;
+//   }
+// }
