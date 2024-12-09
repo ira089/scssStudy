@@ -1,2 +1,19 @@
-@use "utils/reset.scss";
-// @use "components/btn";
+// @use "utils/reset.scss";
+// @use "utils/colors.scss";
+// @use "utils/flex.scss";
+// @use "utils/sizing";
+// @use "utils/spacing";
+// @use "utils/variables";
+// @use "utils/font";
+// @use "utils/functions";
+// @use "utils/mixins";
+// @use "utils/utils";
+
+@use "utils";
+
+// почему то импорт как проекте ментора не работает : @use "utils";
+// работает - нужен файл index with @forward
+
+:root {
+  font-family: sans-serif;
+}

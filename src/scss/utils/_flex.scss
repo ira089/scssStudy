@@ -1,8 +1,8 @@
-@use "variables";
+@use "mixins" as *;
 
 // Властивість justify-content
-$values: start, end, center, stretch, between, around, evenly;
-@each $value in $values {
+$main-direction: start, end, center, stretch, between, around, evenly;
+@each $value in $main-direction {
   .justify-#{$value} {
     @if ($value == start) or ($value == end) {
       justify-content: flex-#{$value};
@@ -15,8 +15,8 @@ $values: start, end, center, stretch, between, around, evenly;
 }
 
 // Властивість align-items
-$values: start, end, center, stretch;
-@each $value in $values {
+$cross-direction: start, end, center, stretch;
+@each $value in $cross-direction {
   .items-#{$value} {
     @if ($value == start) or ($value == end) {
       align-items: flex-#{$value};
@@ -25,7 +25,6 @@ $values: start, end, center, stretch;
     }
   }
 }
-
 // Додатково
 .flex-center {
   // Підключення міксинів далі
