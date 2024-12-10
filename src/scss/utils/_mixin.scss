@@ -11,7 +11,10 @@ $breakpoints: (
 
 @mixin mq($bp: sm, $type: min, $is-retina: false) {
   @if map.has-key($breakpoints, $bp) {
+    // @debug map-has-key($breakpoints, $bp);
     $width: map-get($breakpoints, $bp);
+    @debug $width;
+    // почему значание стр.16 768px i 1200px?
 
     @if $type == max {
       $width: $width - 0.02px;
