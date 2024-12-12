@@ -1,7 +1,7 @@
 // Commect styles
 import "../scss/main.scss";
 
-// import * as bodyScrollLock from "body-scroll-lock";
+import * as bodyScrollLock from "body-scroll-lock";
 
 // Sidebar menu
 const refsMenu = {
@@ -16,10 +16,10 @@ const toggleMenu = () => {
   refsMenu.openMenuBtn.setAttribute("aria-expanded", !isMenuOpen);
   refsMenu.overlayMenu.classList.toggle("is-open");
 
-  // const scrollLockMethod = !isMenuOpen
-  //   ? "disableBodyScroll"
-  //   : "enableBodyScroll";
-  // bodyScrollLock[scrollLockMethod](document.body);
+  const scrollLockMethod = !isMenuOpen
+    ? "disableBodyScroll"
+    : "enableBodyScroll";
+  bodyScrollLock[scrollLockMethod](document.body);
 };
 
 refsMenu.openMenuBtn.addEventListener("click", toggleMenu);
